@@ -1,0 +1,23 @@
+<div>
+  <h1>Todo List</h1>
+  <app-todo-list-form (addTodo)="getTodos()"></app-todo-list-form>
+
+  <ul class="list">
+    <li *ngFor="let todo of todos">
+      <div class="item_title">
+        <h3 [ngClass]="{ done: todo.isDone }">
+          {{ todo.title }}
+        </h3>
+        <div class="item_actions">
+          <button mat-raised-button (click)="done(todo.id || '')">Done</button>
+          <button mat-raised-button (click)="delete(todo.id || '')">
+            Delete
+          </button>
+        </div>
+      </div>
+      <p *ngIf="todo.description && !todo.isDone">
+        {{ todo.description }}
+      </p>
+    </li>
+  </ul>
+</div>

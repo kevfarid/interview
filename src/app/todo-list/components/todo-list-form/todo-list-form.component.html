@@ -1,0 +1,11 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()" class="form">
+  <mat-form-field>
+    <input matInput placeholder="Title" formControlName="title" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description" />
+  </mat-form-field>
+  <button mat-flat-button color="primary" type="submit">
+    Add
+  </button>
+</form>
